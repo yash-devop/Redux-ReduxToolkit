@@ -41,3 +41,80 @@ In the above example :
    So , Dispatch is applied on something that will take that Action to the Store.
 
    Something can be : a button or anyyyy UI thing.
+
+
+   # NPM Redux Install
+
+   Snippet :  ``` npm install redux ```
+   After this , create a file called index.js
+
+   # 2 Methods to create " STORE " in Redux
+
+   1) createStore
+      
+      ```
+      // import {createStore} from 'redux';
+      const redux = require('redux')
+      
+      // createStore
+      
+      const initialState = {
+          amount : 1
+      }
+      const store = redux.createStore(reducer);
+      
+      function reducer(state=initialState,action){
+          // now,after line 24 ,this reducer function will have the access inside ACTION
+          if(action.type === "INCREMENT"){ //this should match the exact type : "..."
+              return {amount : initialState.amount+1}
+          } 
+          return state;
+      }
+      
+      // get global state
+      console.log(store.getState());  // provides us the GlobalState
+      
+      // action format : {type : "INCREMENT"};
+      
+      // Dispatch the action. so we have to use : dispatch() from store.
+      // inside that we have to pass the object/data/action with format type:data
+      
+      store.dispatch({type: "INCREMENT"})
+      
+      // now will check whether changes took place or not
+      
+      console.log(store.getState());
+      ```
+
+      Without Comments :
+      ```
+      // import {createStore} from 'redux'   => for REACT
+      const redux = require('redux')
+      
+      // createStore
+      
+      const initialState = {
+          amount : 1
+      }
+      const store = redux.createStore(reducer);
+      
+      function reducer(state=initialState,action){
+          if(action.type === "INCREMENT"){
+              return {amount : initialState.amount+1}
+          } 
+          return state;
+      }
+      
+      // get global state
+      console.log(store.getState());
+
+      store.dispatch({type: "INCREMENT"})
+          
+      console.log(store.getState());
+      ```
+
+   Vscode Snippet :
+   ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/6b118d90-a78a-4275-86fa-192acb853287)
+   ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/a8c8f92b-0186-4dc8-8c10-077a21416b3f)
+
+
