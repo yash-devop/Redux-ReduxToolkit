@@ -252,7 +252,7 @@ VSCODE SNIPPET :
 
 ```
 
-# Suppose we have to make an API call in Redux. 
+# Suppose we have to make an API call in Redux ( ** REDUX THUNK ** )
 
 For now , i created a simple db.json file as my basic easy database which returns json.
 
@@ -321,3 +321,6 @@ Now we have to make API call and whatever the value it returns , we have to pass
 
 
 ```
+
+Now , we have to MAKE AN API CALL ,so will do :
+
