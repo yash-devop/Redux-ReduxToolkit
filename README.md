@@ -45,7 +45,7 @@ In the above example :
 
    # NPM Redux Install
 
-   Snippet :  ``` npm install redux ```
+   Do :  ``` npm install redux ```
    After this , create a file called index.js
 
    # 2 Methods to create " STORE " in Redux
@@ -117,4 +117,60 @@ In the above example :
    ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/6b118d90-a78a-4275-86fa-192acb853287)
    ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/a8c8f92b-0186-4dc8-8c10-077a21416b3f)
 
+
+   # We can also apply Middlewares in Redux :
+
+   Vscode snippet :
+   ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/372ebeda-6c0b-49e1-8554-dbf746f5f77d)
+   ```
+   import {createStore , applyMiddleware} from 'redux';
+   import logger from 'redux-logger';
+   const initialState = {
+       amount : 1
+   }
+   const store = createStore(reducer , applyMiddleware(logger.default));
+   
+   function reducer(state=initialState,action){
+       if(action.type === "INCREMENT"){ 
+           return {amount : initialState.amount+1}
+       } 
+       return state;
+   }
+   
+   console.log(store.getState()); 
+   
+   store.dispatch({type: "INCREMENT"})
+   
+   console.log(store.getState());
+```
+
+# Multiple Data:
+
+![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/3f451f3e-f303-4c18-9c27-7f11b7213de0)
+
+
+```
+      import {createStore , applyMiddleware} from 'redux';
+      import logger from 'redux-logger';
+      const initialState = {
+          amount : 1
+      }
+      const store = createStore(reducer , applyMiddleware(logger.default));
+      function reducer(state=initialState,action){
+          if(action.type === "INCREMENT"){ 
+              return {amount : initialState.amount+1}
+          }
+          if(action.type === "DECREMENT"){
+              return {amount : initialState.amount - 1};
+          }
+          if(action.type === "INCREMENTByAmount"){
+              return {amount : initialState.amount + action.payload };
+          }
+          return state;
+      }
+      // store.dispatch({type: "DECREMENT"})  // decrement amount:1 to amount:0
+      // store.dispatch({type: "INCREMENTByAmount"}) //this will not work, it will return NaN
+      store.dispatch({type: "INCREMENTByAmount" , payload : 9}) 
+
+```
 
