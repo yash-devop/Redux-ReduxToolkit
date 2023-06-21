@@ -52,7 +52,7 @@ In the above example :
 
    # 1) createStore
       
-      ```
+      ```js
       // import {createStore} from 'redux';
       const redux = require('redux')
       
@@ -87,7 +87,7 @@ In the above example :
       ```
 
       # Without Comments :
-      ```
+      ```js
       // import {createStore} from 'redux'   => for REACT
       const redux = require('redux')
       
@@ -122,7 +122,7 @@ In the above example :
 
    Vscode snippet :
    ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/372ebeda-6c0b-49e1-8554-dbf746f5f77d)
-   ```
+   ```js
    import {createStore , applyMiddleware} from 'redux';
    import logger from 'redux-logger';
    const initialState = {
@@ -147,7 +147,7 @@ In the above example :
 # Multiple Data:
 ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/3f451f3e-f303-4c18-9c27-7f11b7213de0)
 
-```
+```js
       import {createStore , applyMiddleware} from 'redux';
       import logger from 'redux-logger';
       const initialState = {
@@ -175,7 +175,7 @@ In the above example :
 This ACTIONS ```{type: "INCREMENTByAmount" , payload : 9}``` data can become complicated and need to simplify it.
 so , we use ACTION CREATORS
 
-```
+```js
    import {createStore , applyMiddleware} from 'redux';
    import logger from 'redux-logger';
    const initialState = {
@@ -216,7 +216,7 @@ VSCODE SNIPPET :
 ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/164b4ec4-5534-4322-8d0b-f4111c53cae0)
 ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/b901fcff-9a71-4192-963d-fb6463f8da12)
 
-```
+```js
       import {createStore , applyMiddleware} from 'redux';
       import logger from 'redux-logger';
       const initialState = {
