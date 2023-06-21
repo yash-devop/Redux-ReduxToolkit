@@ -50,7 +50,7 @@ In the above example :
 
    # 2 Methods to create " STORE " in Redux
 
-   1) createStore
+   # 1) createStore
       
       ```
       // import {createStore} from 'redux';
@@ -86,7 +86,7 @@ In the above example :
       console.log(store.getState());
       ```
 
-      Without Comments :
+      # Without Comments :
       ```
       // import {createStore} from 'redux'   => for REACT
       const redux = require('redux')
@@ -113,7 +113,7 @@ In the above example :
       console.log(store.getState());
       ```
 
-   Vscode Snippet :
+   # Vscode Snippet :
    ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/6b118d90-a78a-4275-86fa-192acb853287)
    ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/a8c8f92b-0186-4dc8-8c10-077a21416b3f)
 
