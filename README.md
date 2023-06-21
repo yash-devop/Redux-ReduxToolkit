@@ -142,12 +142,10 @@ In the above example :
    store.dispatch({type: "INCREMENT"})
    
    console.log(store.getState());
-```
+   ```
 
 # Multiple Data:
-
 ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/3f451f3e-f303-4c18-9c27-7f11b7213de0)
-
 
 ```
       import {createStore , applyMiddleware} from 'redux';
