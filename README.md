@@ -271,6 +271,53 @@ Now , Install Axios Library to make API calls ,fetch the data..
 
 ``` npm i axios```
   
+Now we have to make API call and whatever the value it returns , we have to pass it to the REDUCER with actions(contains the data as we did in the above codes)
+
+![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/e980c54f-3388-486d-8ff5-33486c40e2e2)
+
+![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/3fc084b9-f70b-4807-9dd9-6c614137e454)
 
 
+```js
+   import {createStore , applyMiddleware} from 'redux';
+   import logger from 'redux-logger';
+   const initialState = {
+       amount : 1
+   }
+   const store = createStore(reducer , applyMiddleware(logger.default));
+   
+   // Action Creator:
+   
+   const initUser =(value)=>{
+       return {type:"INITIAL" ,payload:value}
+   }
+   const increment =()=>{
+       return {type:"INCREMENT"}
+   }
+   const decrement =()=>{
+       return {type:"DECREMENT"}
+   }
+   const INCREMENTByAmount =(value)=>{
+       return {type:"INCREMENTByAmount" , payload : value}
+   }
+   
+   function reducer(state=initialState,action){
+   
+       switch(action.type){
+           case "INITIAL":
+               return {amount : action.payload};
+           case "INCREMENT":
+               return {amount : initialState.amount+1};
+           case "DECREMENT":
+               return {amount : initialState.amount-11};
+           case "INCREMENTByAmount":
+               return {amount : initialState.amount + action.payload};
+           default:
+               return state;
+           
+       }
+   }
+   store.dispatch(INCREMENTByAmount(899)) 
 
+
+```
