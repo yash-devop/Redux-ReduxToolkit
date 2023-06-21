@@ -257,6 +257,7 @@ VSCODE SNIPPET :
 For now , i created a simple db.json file as my basic easy database which returns json.
 
 ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/c4efcf96-80cd-46fe-8a34-e5c2a39b3404)
+
 Let's create a JSON server in node so that we can use it as an API.
 
 
