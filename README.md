@@ -1,5 +1,5 @@
 # Redux-ReduxToolkit
-Redux and Redux-toolkit 101.
+#                                                       Redux and Redux-toolkit 101.
 
 What is Prop Drilling ?
 ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/8ff478da-6f86-4095-938d-9a7172045d74)
@@ -171,4 +171,49 @@ In the above example :
       store.dispatch({type: "INCREMENTByAmount" , payload : 9}) 
 
 ```
+
+This ACTIONS ```{type: "INCREMENTByAmount" , payload : 9}``` data can become complicated and need to simplify it.
+so , we use ACTION CREATORS
+
+```
+   import {createStore , applyMiddleware} from 'redux';
+   import logger from 'redux-logger';
+   const initialState = {
+       amount : 1
+   }
+   const store = createStore(reducer , applyMiddleware(logger.default));
+   
+   // Action Creator:
+   
+   const increment =()=>{
+       return {type:"INCREMENT"}
+   }
+   const decrement =()=>{
+       return {type:"DECREMENT"}
+   }
+   const INCREMENTByAmount =()=>{
+       return {type:"INCREMENTByAmount" , payload : 9}
+   }
+   
+   function reducer(state=initialState,action){
+       if(action.type === "INCREMENT"){ 
+           return {amount : initialState.amount+1}
+       }
+       if(action.type === "DECREMENT"){
+           return {amount : initialState.amount - 1};
+       }
+       if(action.type === "INCREMENTByAmount"){
+           return {amount : initialState.amount + action.payload };
+       }
+       return state;
+   }
+   store.dispatch(INCREMENTByAmount()) 
+
+```
+
+VSCODE SNIPPET :
+
+![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/164b4ec4-5534-4322-8d0b-f4111c53cae0)
+![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/b901fcff-9a71-4192-963d-fb6463f8da12)
+
 
