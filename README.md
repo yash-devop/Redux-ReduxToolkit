@@ -251,3 +251,21 @@ VSCODE SNIPPET :
       store.dispatch(INCREMENTByAmount(9)) 
 
 ```
+
+# Suppose we have to make an API call in Redux. 
+
+For now , i created a simple db.json file as my basic easy database which returns json.
+![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/c4efcf96-80cd-46fe-8a34-e5c2a39b3404)
+Let's create a JSON server in node so that we can use it as an API.
+![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/6ef6b0e0-17db-46f6-82f9-d9e73765c064)
+
+Now type : ``` json-server db.json```  to start our json file as the server ... it will provide a link.
+![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/746fec96-29e7-42c8-b4f8-5917264655f0)
+
+Now , Install Axios Library to make API calls ,fetch the data..
+
+``` npm i axios```
+  
+
+
+
