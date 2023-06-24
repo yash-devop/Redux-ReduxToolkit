@@ -1,4 +1,3 @@
-![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/4f662292-fcc6-4caa-90a7-5c6411ca8957)# Redux-ReduxToolkit
 #                                                       Redux and Redux-toolkit 101.
 
 What is Prop Drilling ?
@@ -335,6 +334,8 @@ Now we have to make API call and whatever the value it returns , we have to pass
 Now , we have to MAKE AN API CALL ,so will do :  ( in the Index.js node server file)
 
 vscode snippet : 
+![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/4f662292-fcc6-4caa-90a7-5c6411ca8957)
+
 ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/5815c6e7-8722-45cc-ad25-292432482c4c)
 
 // API CALL
@@ -347,8 +348,8 @@ const getUser=async()=>{
 }
 store.dispatch(getUser()) 
 ```
-# IT IS THROW AN ERROR... Its a very common error in Redux coz we are making an API CALL and in redux we can achieve this by using REDUX THUNK
+It will THROW AN ERROR... Its a very common error in Redux coz we are making an API CALL and in redux we can achieve this by using REDUX THUNK
 
 now , When we are using Redux Thunk , we have to pass the FUNCTION and not the Function Call in the Dispatch
-like instead of store.dispatch(INCREMENTByAmount())  , we have to pass store.dispatch(INCREMENTByAmount) 
-and also , we have to pass 2 parameters :   dispatch and getState in the function you are making the API CALLS
+like instead of ```store.dispatch(INCREMENTByAmount())```  , we have to pass ```store.dispatch(INCREMENTByAmount) ```
+and also , we have to pass 2 parameters :  ```dispatch and getState ```in the function you are making the API CALLS
