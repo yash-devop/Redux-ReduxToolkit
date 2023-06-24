@@ -128,6 +128,8 @@ In the above example :
    const initialState = {
        amount : 1
    }
+   // if we are using REDUX in Node,  then just we have to write .default while
+   // applying middleware
    const store = createStore(reducer , applyMiddleware(logger.default));
    
    function reducer(state=initialState,action){
@@ -153,6 +155,8 @@ In the above example :
       const initialState = {
           amount : 1
       }
+      // if we are using REDUX in Node,  then just we have to write .default while
+      // applying middleware
       const store = createStore(reducer , applyMiddleware(logger.default));
       function reducer(state=initialState,action){
           if(action.type === "INCREMENT"){ 
@@ -181,6 +185,8 @@ so , we use ACTION CREATORS
    const initialState = {
        amount : 1
    }
+   // if we are using REDUX in Node,  then just we have to write .default while
+   // applying middleware
    const store = createStore(reducer , applyMiddleware(logger.default));
    
    // Action Creator:
@@ -222,6 +228,8 @@ VSCODE SNIPPET :
       const initialState = {
           amount : 1
       }
+      // if we are using REDUX in Node,  then just we have to write .default while
+      // applying middleware
       const store = createStore(reducer , applyMiddleware(logger.default));
       
       // Action Creator:
@@ -284,6 +292,8 @@ Now we have to make API call and whatever the value it returns , we have to pass
    const initialState = {
        amount : 1
    }
+   // if we are using REDUX in Node,  then just we have to write .default while
+   // applying middleware
    const store = createStore(reducer , applyMiddleware(logger.default));
    
    // Action Creator:
@@ -322,5 +332,13 @@ Now we have to make API call and whatever the value it returns , we have to pass
 
 ```
 
-Now , we have to MAKE AN API CALL ,so will do :
+Now , we have to MAKE AN API CALL ,so will do :  ( in the Index.js node server file)
+
+// API CALL
+
+const getUser=async()=>{
+    const {data} = await axios.get('http://localhost:3000/account/1')
+    console.log(data)
+
+}
 
