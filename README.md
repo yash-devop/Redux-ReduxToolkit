@@ -403,3 +403,8 @@ const getUser=(id)=>{
 store.dispatch(getUser(2)) 
 
 ```
+
+# Multiple Reducers 
+
+Suppose , in our api we have other field as bonus:
+
