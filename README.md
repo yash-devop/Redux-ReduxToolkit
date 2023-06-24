@@ -1,4 +1,4 @@
-#                                                       Redux and Redux-toolkit 101.
+![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/9297e63a-5da2-4941-a5a2-f80cfede2b25)#                                                       Redux and Redux-toolkit 101.
 
 What is Prop Drilling ?
 ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/8ff478da-6f86-4095-938d-9a7172045d74)
@@ -353,3 +353,52 @@ It will THROW AN ERROR... Its a very common error in Redux coz we are making an 
 now , When we are using Redux Thunk , we have to pass the FUNCTION and not the Function Call in the Dispatch
 like instead of ```store.dispatch(INCREMENTByAmount())```  , we have to pass ```store.dispatch(INCREMENTByAmount) ```
 and also , we have to pass 2 parameters :  ```dispatch and getState ```in the function you are making the API CALLS
+
+Vscode snippet: 
+![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/395b5aab-d3fb-4894-b47d-85eac3acf184)
+
+Code :
+
+```js
+// API CALL
+
+const getUser=async(dispatch,getState)=>{
+    const {data} = await axios.get('http://localhost:3000/account/1') 
+    console.log(data)
+    dispatch({type: initUser , payload: data.amount})
+
+}
+store.dispatch(getUser) 
+```
+
+
+Now in the above code,  we are passing that we want the data at ID = 1
+but what if we do it dynamically , whatever the user passes , it should do that particular API CALL
+
+Follow this : 
+![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/e0e87909-2e52-40e6-ba7d-19d7d364223e)
+
+Code :
+
+Here , we did some modification like we have the getUser function , just we have passed the id as the argument
+and inside this getUser function , we are returning another function which is async and making the API CALL..
+
+This is the best approach to make the API CALLS.
+
+
+```js
+
+// API CALL
+
+const getUser=(id)=>{
+    return async(dispatch,getState)=>{
+        // const {data} = await axios.get(`http://localhost:3000/account/1`) 
+        const {data} = await axios.get(`http://localhost:3000/account/${id}`) 
+        console.log(data)
+        dispatch({type: initUser , payload: data.amount})
+    }
+
+}
+store.dispatch(getUser(2)) 
+
+```
