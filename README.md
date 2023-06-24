@@ -376,6 +376,7 @@ Now in the above code,  we are passing that we want the data at ID = 1
 but what if we do it dynamically , whatever the user passes , it should do that particular API CALL
 
 Follow this : 
+
 ![image](https://github.com/yash-devop/Redux-ReduxToolkit/assets/112558970/e0e87909-2e52-40e6-ba7d-19d7d364223e)
 
 Code :
